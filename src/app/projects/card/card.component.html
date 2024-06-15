@@ -1,0 +1,16 @@
+<div class="project_card">
+    <div class="title_description_img">
+        <div class="heading_wrapper">
+            <p class="heading">{{project?.name}}</p>
+            <p class="des">{{project?.des}}</p>
+        </div>
+        <div class="image_wrapper">
+            <img src="{{project?.img}}" />
+        </div>
+    </div>
+    <div class="btn_wrapper">
+        <button mat-flat-button color="warn" class="button_goto" 
+        routerLink="/{{project?.slug}}"
+        >{{project?.id !==54444?'go to project':'view my resume'}}</button>
+    </div>
+</div>

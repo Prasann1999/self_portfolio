@@ -1,0 +1,51 @@
+<mat-card class="example-card" 
+[ngClass]="{ 'example-card_home': from==='home'}"
+ >
+  <mat-card-header class="header_main_card">
+    <div mat-card-avatar class="example-header-image">
+      <img  *ngIf="skill?.logo" src={{skill?.logo}} class="logo_image" />
+      <div *ngIf="!skill?.logo" class="placeholder_icon" 
+      [style.color]="lightTitle"
+      [style.backgroundColor]="bgColorStyleBindingLogo" >{{skill?.heading?.slice(0,1)}}</div>
+    </div>
+    <mat-card-title> {{skill?.heading}}</mat-card-title>
+    <mat-card-subtitle> {{skill?.level}}</mat-card-subtitle>
+    <div *ngIf="skill?.wishList" class="wishlist" (click)="removeWishList(skill)">
+      <img src="../../../assets/love.png" />
+    </div>
+    <div *ngIf="!skill?.wishList" class="wishlist" (click)="wishList(skill)">
+      <img src="../../../assets/empty_love.png" />
+    </div>
+  </mat-card-header>
+  <div class="img_thumb">
+    <img mat-card-image src={{skill?.thumbnail}}  *ngIf="skill?.thumbnail" alt="Photo of a Shiba Inu" />
+    <div class="thumbnail_placegolder" *ngIf="!skill?.thumbnail" [style.backgroundColor]="bgColorStyleBinding">
+      <div class="thumb_text">
+        {{skill?.description}},yoe:{{skill?.yoeObj}}
+      </div>
+    </div>
+    <div *ngIf="skill.ratingNum" class="rating_skills">
+      <span class="title">Skills:</span>
+      <app-rating-stars [rating]="skill.ratingNum"></app-rating-stars>
+    </div>
+  </div>
+
+  <mat-card-content>
+    <p class="card_content">
+      {{skill?.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="card_button_container">
+      <button mat-stroked-button color="accent" *ngIf="from==='wishlist'" 
+      (click)="removeWishList(skill)"
+      class="remove_wish">Remove from
+        wishList</button>
+      <!-- <button mat-stroked-button color="accent" *ngIf="from==='list'" class="list_btn">Like</button> -->
+      <button mat-stroked-button color="accent" 
+      class="list_btn"
+      routerLink="/skills/{{skill?.id}}" mat-button *ngIf="(from==='list'||from==='home')">Go To Page</button>
+    </div>
+
+  </mat-card-actions>
+</mat-card>

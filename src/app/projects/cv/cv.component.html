@@ -1,0 +1,33 @@
+<div class="my_resume_wrapper" id="main_id">
+    <div class="heading_main">
+        <div class="heading_wrapper">
+            <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style"
+                class="buttons_select_wrapper" [(ngModel)]="selectedValue" (change)="onSelectionChange($event.value)">
+                <mat-button-toggle value="profile_id">Profile</mat-button-toggle>
+                <mat-button-toggle value="about_id">About</mat-button-toggle>
+                <mat-button-toggle value="experience_id">Experience</mat-button-toggle>
+                <mat-button-toggle value="skills_id">Skills</mat-button-toggle>
+                <mat-button-toggle value="education_id">Education</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+
+    <div class="resume_main">
+        <div class="my_name">
+            <app-profile [resume]="resume" [selectedValue]="selectedValue"></app-profile>
+            <app-about [resume]="resume" [selectedValue]="selectedValue"></app-about>
+            <div class="outer_content_wrapper">
+               <app-experience [resume]="resume" [selectedValue]="selectedValue" ></app-experience>
+                <app-skills [resume]="resume" [selectedValue]="selectedValue" ></app-skills>
+            </div>
+            <app-education [resume]="resume" [selectedValue]="selectedValue" ></app-education>
+        </div>
+    </div>
+</div>
+
+<div class="resume_download_action" (click)="downloadResume()">
+    <div class="cv_download">
+        <img src="../../../assets/resume_icon.png" />
+        <p><span>Download</span> <span>Resume</span></p>
+    </div>
+</div>

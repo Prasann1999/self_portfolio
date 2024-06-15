@@ -1,0 +1,15 @@
+<div class="projects_main" [ngClass]="{'project_wrapper_home':from==='home'}">
+    <div class="heading_listing_home" *ngIf="(from === 'home')">
+        <h2>
+            Sample Projects
+        </h2>
+        <div class="filter_sort">
+            <button mat-raised-button color="primary" routerLink="/projects">View All</button>
+        </div>
+    </div>
+    <div class="project_wrapper">
+        <div *ngFor="let project of projectLists">
+            <app-card [project]="project"></app-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="listing-wrapper">
+    <div class="heading" *ngIf="(from === 'list')">
+        <h2>
+            My Skills/Proficiency
+        </h2>
+        <div class="filter_sort">
+            <button mat-raised-button (click)="filterClick('sort')">Sort</button>
+            <button mat-raised-button color="primary" (click)="filterClick('filter')">Filter</button>
+        </div>
+    </div>
+    <div *ngIf="(from === 'home'||from === 'sdp')"
+        [ngClass]="{'heading_listing_sdp':from==='sdp','heading_listing_home':from==='home'}">
+        <h2>
+            My Skills/Proficiency
+        </h2>
+        <div class="filter_sort">
+            <button mat-raised-button color="primary" routerLink="/skills">View All</button>
+        </div>
+    </div>
+    <div class="heading wishlist_heading" *ngIf="from === 'wishlist'">
+        <h2>
+            Saved for later/wishlist
+        </h2>
+    </div>
+    <div class="listing-main" [ngClass]="{ 'listing-main_home': from==='home','listing-main_sdp':from==='sdp'}">
+        <!-- <router-outlet></router-outlet> -->
+        <div *ngFor="let elem of skillList">
+            <app-card [skill]="elem" [from]="from"></app-card>
+        </div>
+    </div>
+    <div class="no_data" *ngIf="skillList?.length===0">
+        <p>No data is present</p>
+    </div>
+</div>

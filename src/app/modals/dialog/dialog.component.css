@@ -1,0 +1,144 @@
+.form_support_main {
+    width: 100%;
+    .name {
+        width: 350px;
+    }
+
+    .form_grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .textarea_msg {
+        width: 100%;
+    }
+
+    .each_input {
+        width: 100% !important;
+    }
+
+    .each_input_box {
+        width: 100%;
+    }
+
+    .row_form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        textarea {
+            border: 1px solid lightgray;
+            padding: 10px 10px;
+            width: 100%;
+        }
+    }
+
+    .each_input {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .each_input_box {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+
+            input {
+                width: 100%;
+                padding: 10px 20px;
+                border: 1px solid lightgrey;
+                border-radius: 4px;
+            }
+        }
+
+        .labelName {
+            font-weight: 400;
+            width: 140px;
+        }
+    }
+}
+
+.heading_support_modal {
+    margin: -24px -25px 8px -25px; 
+    background-color: #3f51b5;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 0px 0px 10px 10px;
+    position: relative;
+    overflow-x: hidden;
+
+    .cross_close {
+        /* display: none; */
+        position: absolute;
+        top: 5px;
+        cursor: pointer;
+        right: 20px;
+
+        img {
+            background-color: white;
+            padding: 5px;
+            border-radius: 50%;
+            width: 25px;
+        }
+    }
+}
+.button_wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    button{
+        width: 150px;
+    }
+}
+/* .custom-dialog-support{
+    width: 50px !important;
+} */
+@media only screen and (max-width: 767px) {
+
+  .button_wrapper{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    width: 100%;
+    margin-left: -23px;
+    button{
+        width: 50%;
+        margin-left: 0px !important;
+        border-radius: 0px;
+    }
+}
+}
+.mat-dialog-container{
+    max-width: 600px !important;
+}
+.show_added_values{
+    width: 100%;
+    .self_message{
+        margin-top: 8px;
+        color: red;
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        .name{
+            width: 25%;
+        }
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+}

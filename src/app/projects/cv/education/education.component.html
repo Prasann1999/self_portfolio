@@ -1,0 +1,53 @@
+<div class="my_college"
+[ngClass]="{ 'selected_resume': selectedValue === 'education_id' }">
+<span class="dummy_span_for_scroll_cv" id="education_id">edu</span>
+<div class="row1" 
+[ngClass]="{ 'row1_home': from === 'home' }"
+>
+    <div class="data_coep">
+        <h2 class="title">Education:</h2>
+        <img src="../../../assets/COEP.png" class="coep_image" />
+    </div>
+    <div class="content_coep">
+        <p class="college_name">{{resume?.education?.institution}}</p>
+        <ul class="academics">
+            <li>
+                {{resume?.education?.degree}}
+            </li>
+            <li>
+                Grade: {{resume?.education?.grade}}
+            </li>
+            <li>
+                {{resume?.education?.duration}}
+            </li>
+        </ul>
+        <div class="content_data">
+            <p>"{{resume?.education?.details}}"</p>
+        </div>
+
+    </div>
+</div>
+<div class="row2" *ngIf="from==='cv'">
+    <div class="content_coep">
+        <p class="college_name">Rankings Of COEP</p>
+        <ul class="academics">
+            <li>
+                20th amongst Top100 Engineering Colleges in India.
+            </li>
+            <li>
+                2nd amongst Top 3 Engineering Colleges in West Zone.
+            </li>
+            <li>
+                {{resume?.education?.duration}}
+            </li>
+        </ul>
+        <div class="content_data">
+            <p>"COEP has received following ranks as per the results of Outlook- MDRA Survey 2013"</p>
+        </div>
+
+    </div>
+    <div class="data_coep">
+        <img src="../../../assets/COEP_LOGO.jpeg" class="coep_image" />
+    </div>
+</div>
+</div>

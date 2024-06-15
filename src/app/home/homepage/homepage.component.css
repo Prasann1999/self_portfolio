@@ -1,0 +1,22 @@
+  .home-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 900px !important;
+  }
+
+  .coursal_main_right_transition {
+    transition: all 0.3s ease;
+    /* Smooth transition */
+    transform: translateX(15%);
+    max-width: 850px;
+  }
+
+  .coursal_main_left_transition {
+    transition: all 0.3s ease;
+    /* Smooth transition */
+    transform: translateX(0%);
+    max-width: 100%;
+  }

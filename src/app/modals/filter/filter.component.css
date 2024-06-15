@@ -1,0 +1,103 @@
+.heading_support_modal {
+    margin: -24px -25px 8px -25px; 
+    background-color: #3f51b5;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 0px 0px 10px 10px;
+    position: relative;
+    overflow-x: hidden;
+
+    .cross_close {
+        /* display: none; */
+        position: absolute;
+        top: 5px;
+        cursor: pointer;
+        right: 20px;
+
+        img {
+            background-color: white;
+            padding: 5px;
+            border-radius: 50%;
+            width: 25px;
+        }
+    }
+}
+.mat-dialog-actions{
+    padding-top: 0px;
+}
+.button_wrapper {
+    position: absolute;
+    bottom: 5px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding-bottom: 8px;
+
+    button {
+        width: 150px;
+    }
+}
+.filter_content{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    .row2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .heading_support_modal {
+        
+        margin: -24px -25px 8px -25px !important;
+        border-radius: 0px;
+    
+        .cross_close {
+            /* display: none; */
+            position: absolute;
+            top: 5px;
+            cursor: pointer;
+            right: 20px;
+    
+            img {
+                background-color: white;
+                padding: 5px;
+                border-radius: 50%;
+                width: 25px;
+            }
+        }
+    }
+    .row2{
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 0px;
+    }
+    .button_wrapper {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        gap: 0px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        button {
+            border-radius: 0px;
+            width: 50%;
+            margin: 0 !important;
+            padding: 6px;
+        }
+    }
+}
+.mat-form-field{
+    width: 100%;
+}
+.form_support_main{
+    width: 100%;
+}
+.mat-tab-body-content{
+    transform: translateX(-1px) !important;
+}

@@ -1,0 +1,36 @@
+<div class="timer_wrapper" *ngIf="from==='link'">
+    <div class="heading">
+        <h1>Count down timer
+            {{from}}
+        </h1>
+    </div>
+    <div class="content">
+        <div class="input_wrapper">
+            <span class="stop_msg" *ngIf="timerStart">
+                To stop timer click reset
+            </span>
+            <div *ngIf="!timerStart" class="time_input_main">
+                <label>Enter Time in Sec:</label>
+                <input class="timer_input" placeholder="Enter seconds" type="number" name="name"
+                    (keyup)="getValue(ipBox.value)" #ipBox [disabled]="timerStart" [value]="timeInput" />
+            </div>
+
+            <div class="btn_wrapper">
+                <button mat-raised-button color="primary" (click)="startTimer()" [disabled]="timerStart">Start</button>
+                <button mat-raised-button color="accent" (click)="stopTimer()" [disabled]="!timerStart">Stop</button>
+            </div>
+        </div>
+        <div class="output_wrapper">
+            <h1 *ngIf="timeInput"> {{timeInput | secToHms}}</h1>
+            <h1 *ngIf="!timeInput"> Enter seconds & start timer</h1>
+        </div>
+        <span class="warning_refresh">*don't refresh page when timer is on</span>
+    </div>
+</div>
+
+<div *ngIf="from==='pages' && timeInput>1" class="pages_timer_wrapper">
+    <div class="content">
+        <p *ngIf="timeInput"> {{timeInput | secToHms}}</p>
+        <button  mat-stroked-button color="accent" routerLink="/projects/timer" >open</button>
+    </div>
+</div>

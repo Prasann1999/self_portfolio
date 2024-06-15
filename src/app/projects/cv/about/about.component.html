@@ -1,0 +1,19 @@
+<div class="about_me" [ngClass]="{ 'selected_resume': selectedValue === 'about_id' }" >
+    <span class="dummy_span_for_scroll_cv" id="about_id">about</span>
+    <div class="row2">
+        <div class="content_coep">
+            <ul class="academics">
+                <li class="summary_self_pts">
+                    {{resume?.summary?.[0]}}
+                </li>
+                <li class="summary_self_pts second_list_elem">
+                    {{resume?.summary?.[1]}}
+                </li>
+            </ul>
+        </div>
+        <div class="data_coep">
+            <h2 class="title_about_me">About ME</h2>
+            <img src="../../../assets/self2.jpeg" class="self_image" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="home-page-container" [ngClass]="{ 'coursal_main_right_transition': sideBarView===true,
+    'coursal_main_left_transition':sideBarView ===false
+ }">
+    <app-coursal></app-coursal>
+    <!-- <app-skillslider></app-skillslider> -->
+    <app-tabs></app-tabs>
+     <app-listing [from]="'home'"></app-listing>
+     <app-projests [from]="'home'" ></app-projests>
+</div>

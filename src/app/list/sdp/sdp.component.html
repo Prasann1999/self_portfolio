@@ -1,0 +1,67 @@
+<!-- sdp.component.html -->
+
+<!-- <h1>{{ skillName }}</h1>
+<h1>params</h1>
+<h2>{{skillListSelected?.description}}</h2> -->
+<!-- <h1>{{skillList}}</h1> -->
+
+<div class="sdp_wrapper">
+    <div class="top_container">
+        <div class="image_container">
+            <img src={{skillListSelected?.thumbnail}} *ngIf="skillListSelected?.thumbnail" />
+            <div *ngIf="!skillListSelected?.thumbnail" class="thumbail_placeholder" [style.color]="lightTitle"
+                [style.backgroundColor]="bgColorStyleBindingLogo">
+                <p> {{skillListSelected?.description}}</p>
+
+            </div>
+        </div>
+        <div class="main_text_container">
+            <div class="heading">
+                <h1> {{skillListSelected?.heading}}</h1>
+            </div>
+            <div class="subtext">
+                {{skillListSelected?.description}}
+            </div>
+            <div class="experience">
+                <span class="labelName">
+                    Experience:
+                </span>
+                <app-rating-stars [rating]="skillListSelected.ratingNum"></app-rating-stars>
+                <div>
+
+                </div>
+            </div>
+            <div class="experience">
+                <span class="labelName">
+                    Skills:
+                </span>
+                <div class="skill_tag">
+                    Expert
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div class="callToAction">
+                <button mat-raised-button *ngIf="skillListSelected?.wishList"
+                    (click)="removeWishList(skillListSelected)">Remove from list</button>
+                <button mat-raised-button color="warn" *ngIf="!skillListSelected?.wishList"
+                    (click)="wishList(skillListSelected)">Save for later</button>
+                <button mat-raised-button color="primary" (click)="openDialog()">Support</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="mid-container">
+        <h1 class="title_feature"> <img src={{skillListSelected?.logo}} /> features of {{skillListSelected?.heading}}</h1>
+        <div class="mid-container_grid">
+            <div class="each_feature" *ngFor="let elem of skillListSelected?.features">
+                <span class="each_title">{{elem?.featureTitle}}</span>
+                <span class="each_des">{{elem?.featureDescription}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-container">
+        <!-- <app-listing [from]="'sdp'"></app-listing> -->
+    </div>
+</div>

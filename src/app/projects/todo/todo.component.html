@@ -1,0 +1,38 @@
+<div class="todo_wrapper">
+    <div class="heading_todo">
+        <h1>To do List</h1>
+    </div>
+    <div class="content_wrapper">
+        <div class="input_wrapper">
+            <div class="input_field">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Clearable input</mat-label>
+                    <input matInput type="text" [(ngModel)]="value">
+                    <!-- <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                        <mat-icon>close</mat-icon>
+                    </button> -->
+                </mat-form-field>
+            </div>
+            <div class="btn_wrapper">
+                <button mat-raised-button color="primary" class="btn_todo" (click)="addClick()"
+                    *ngIf="!edit?.val">Add</button>
+                <button mat-raised-button color="primary" class="btn_todo" (click)="editClick()"
+                    *ngIf="edit?.val">Edit</button>
+                <button mat-raised-button color="accent" class="btn_todo" (click)="resetClick()">Reset</button>
+            </div>
+            <div class="addedTasks_wrapper">
+                <div class="{{elem?.id!==edit?.id?'each_task':'each_task each_task_select'}}" *ngFor="let elem of list">
+                    <span>{{elem?.val}}</span>
+                    <span class="icons_wrapper">
+                        <img src="../../../assets/delete.png" (click)="removeToDo(elem)" />
+                        <img src="../../../assets/edit.png" (click)="editToDo(elem)" />
+                    </span>
+                </div>
+                <div *ngIf="list?.length===0" class="empty_tasks">
+                    <p>Add Tasks in to do list</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

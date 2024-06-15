@@ -1,0 +1,121 @@
+<h1 mat-dialog-title class="heading_support_modal">Filters
+    <div class="cross_close" (click)="close()">
+        <img src="../../../assets/cross.svg" />
+    </div>
+</h1>
+<div mat-dialog-actions>
+    <div class="form_support_main">
+        <!-- <button (click)="tabGroup.selectedIndex = 0">Select Tab 2</button> -->
+        <mat-tab-group #tabGroup>
+            <mat-tab label="SORT">
+                <div class="filter_content">
+                    <div class="each_filter">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Sort by Rating</mat-label>
+                            <mat-select [(ngModel)]="ratingSort" name="yoe">
+                                <mat-option *ngFor="let option of sortOptions" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <!-- <div class="each_filter">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Sort by Year of experience</mat-label>
+                            <mat-select [(ngModel)]="yoeSort" name="yoe">
+                                <mat-option *ngFor="let option of sortOptions" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div> -->
+                </div>
+            </mat-tab>
+            <mat-tab label="FILTER">
+                <div class="filter_content">
+                    <div class="each_filter">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Skill Level:</mat-label>
+                            <mat-select [formControl]="skillLevel" multiple>
+                                <mat-select-trigger>
+                                    {{skillLevel.value ? skillLevel.value[0] : ''}}
+                                    <span *ngIf="skillLevel.value?.length > 1" class="example-additional-selection">
+                                        (+{{skillLevel.value.length - 1}} {{skillLevel.value?.length === 2 ? 'other' :
+                                        'others'}})
+                                    </span>
+                                </mat-select-trigger>
+                                <mat-option *ngFor="let level of filterData?.levels"
+                                    [value]="level">{{level}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="each_filter row2">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Own rating:</mat-label>
+                            <mat-select [formControl]="ratingForm" multiple>
+                                <mat-select-trigger>
+                                    {{ratingForm.value ? ratingForm.value[0] : ''}}
+                                    <span *ngIf="ratingForm.value?.length > 1" class="example-additional-selection">
+                                        (+{{ratingForm.value.length - 1}} {{ratingForm.value?.length === 2 ? 'other' :
+                                        'others'}})
+                                    </span>
+                                </mat-select-trigger>
+                                <mat-option *ngFor="let num of filterData?.ownRating" [value]="num">{{num}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Tags:</mat-label>
+                            <mat-select [formControl]="tagsForm" multiple>
+                                <mat-select-trigger>
+                                    {{tagsForm.value ? tagsForm.value[0] : ''}}
+                                    <span *ngIf="tagsForm.value?.length > 1" class="example-additional-selection">
+                                        (+{{tagsForm.value.length - 1}} {{tagsForm.value?.length === 2 ? 'other' :
+                                        'others'}})
+                                    </span>
+                                </mat-select-trigger>
+                                <mat-option *ngFor="let tag of filterData?.tags" [value]="tag">{{tag}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="each_filter">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Year of experience:</mat-label>
+                            <mat-select [formControl]="yoeForm" multiple>
+                                <mat-select-trigger>
+                                    {{yoeForm.value ? yoeForm.value[0] : ''}}
+                                    <span *ngIf="yoeForm.value?.length > 1" class="example-additional-selection">
+                                        (+{{yoeForm.value.length - 1}} {{yoeForm.value?.length === 2 ? 'other' :
+                                        'others'}})
+                                    </span>
+                                </mat-select-trigger>
+                                <mat-option *ngFor="let yoe of filterData?.yoeObj"
+                                    [value]="yoe.value">{{yoe.title}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="each_filter">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Learned from</mat-label>
+                            <mat-select [formControl]="expType" multiple>
+                                <mat-select-trigger>
+                                    {{expType.value ? expType.value[0] : ''}}
+                                    <span *ngIf="expType.value?.length > 1" class="example-additional-selection">
+                                        (+{{expType.value.length - 1}} {{expType.value?.length === 2 ? 'other' :
+                                        'others'}})
+                                    </span>
+                                </mat-select-trigger>
+                                <mat-option *ngFor="let ex of filterData?.experiance_type"
+                                    [value]="ex.value">{{ex.title}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+
+        <div class="button_wrapper">
+            <button mat-flat-button color="primary" (click)="submitClick()">Apply</button>
+            <button mat-flat-button color="warn" (click)="resetClick()">Reset All</button>
+        </div>
+    </div>
+</div>

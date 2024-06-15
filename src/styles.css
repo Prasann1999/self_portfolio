@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.custom-dialog-support{
+    width: 600px;
+    /* padding: 10px; */
+    .mat-dialog-container {
+        padding: 35px;
+    }
+}
+.custom-dialog-support{
+    width: 100vw; /* Set width to 100% of viewport width */
+}
+.custom-support-modal{
+    position: absolute !important;
+    top: 20% !important;
+    width: 500px !important;
+    .mat-dialog-container{
+        overflow-x: hidden !important;
+    }
+}
+.custom-filter-modal{
+    position: absolute !important;
+    top: 20% !important;
+    width: 500px !important;
+    min-height: 450px !important;
+    .mat-dialog-container{
+        overflow-x: hidden !important;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .custom-dialog-support{
+        width: 100vw; /* Set width to 100% of viewport width */
+    }
+    .custom-filter-modal{
+        position: absolute !important;
+        top: auto !important;
+        bottom: 0 !important;
+        height: 80vh !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+    .button_wrapper{
+        padding-bottom: 0px !important;
+    }
+    .custom-support-modal{
+        position: absolute !important;
+        top: auto !important;
+        bottom: 0 !important;
+        height: 72vh !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+}
+
+.custom-class-timer{
+    width: 100%;
+}
+.custom-class-component_common{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-indicators li{
+    background-color: black !important;
+}
+
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar:horizontal {
+    height: 4px;  /* Height of the horizontal scrollbar */
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d8d8d8;
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a7a7a7;
+}
+
+/* .carousel-control-prev-icon,.carousel-control-next-icon{
+    background-color: rgb(12, 0, 150) !important;
+    background-size: 15px 15px;
+    padding: 5px !important;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+} */
+
+.ng-trigger-translateTab{
+    /* transition: all 0.3s ease;
+    transform: translateX(-1px) !important; */
+}

@@ -1,0 +1,99 @@
+<h1 mat-dialog-title class="heading_support_modal">Support
+    <div class="cross_close" (click)="close()">
+        <img src="../../../assets/cross.svg" />
+    </div>
+</h1>
+<div mat-dialog-actions>
+    <div class="form_support_main">
+        <form [formGroup]="supportForm" (ngSubmit)="supportClicked()" class="form_grid" *ngIf="!showValues">
+            <div class="row_form">
+                <div class="each_input name">
+                    <div class="each_input_box">
+                        <label class="labelName">
+                            Name:
+                        </label>
+                        <input type="text" placeholder="Enter Name" name="user" formControlName="user" />
+                    </div>
+                    <span *ngIf="userValidate?.invalid  && submitClickFlag" style="color: red;">
+                        *enter atleast 3 characters</span>
+                </div>
+
+                <div class="each_input name">
+                    <div class="each_input_box">
+                        <label class="labelName">
+                            Email:
+                        </label>
+                        <input type="text" placeholder="Enter Email" name="email" formControlName="email" />
+                    </div>
+                    <span *ngIf="emailValidate?.invalid  && submitClickFlag" style="color: red;">
+                        *this enter valid
+                        Email</span>
+                </div>
+            </div>
+            <div class="row_form">
+                <div class="each_input name">
+                    <div class="each_input_box">
+                        <label class="labelName">
+                            Phone Number:
+                        </label>
+                        <input type="number" placeholder="Enter Phone" name="phone" formControlName="phone" />
+                    </div>
+                    <span *ngIf="phoneValidate?.invalid && submitClickFlag" style="color: red;">
+                        *enter valid phone number</span>
+                </div>
+            </div>
+            <div class="row_form textarea_msg">
+                <div class="each_input name">
+                    <div class="each_input_box">
+                        <label for="w3review" class="labelName">Enter Message:</label>
+                        <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="enter your message"
+                            formControlName="msg">
+
+                    </textarea>
+                    </div>
+                    <span *ngIf="msgValidate?.invalid  && submitClickFlag" style="color: red;">
+                        *enter message more than 5 chars</span>
+                </div>
+
+            </div>
+
+
+
+            <!-- <input type="text" placeholder="enter password" name="password" formControlName="password" />
+            <span *ngIf="pwdValidate?.invalid && pwdValidate?.touched" style="color: red;">this enter valid pwd</span> -->
+            <br />
+
+        </form>
+        <div *ngIf="showValues" class="show_added_values">
+            <h2>Your submitted values:</h2>
+            <table>
+                <tr>
+                    <th class="name">DataName:</th>
+                    <th class="value">DataValue</th>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{finalValues.user}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{finalValues.email}}</td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td>{{finalValues.phone}}</td>
+                </tr>
+                <tr>
+                    <td>Message:</td>
+                    <td>{{finalValues.msg}}</td>
+                </tr>
+            </table>
+            <p class="self_message">**I dont save your values, this form in of only frontend</p>
+        </div>
+        <div class="button_wrapper">
+            <button mat-flat-button color="primary" (click)="submitClick()" *ngIf="!showValues">submit</button>
+            <button mat-flat-button color="primary" (click)="editClick()" *ngIf="showValues">Edit</button>
+            <button mat-flat-button color="warn" (click)="close()">Close</button>
+        </div>
+    </div>
+</div>

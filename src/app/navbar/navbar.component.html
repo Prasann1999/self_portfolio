@@ -1,0 +1,53 @@
+<div class="navbar_wrapper">
+    <div class="logo_name">
+        <div class="menu" (click)="sideModalOpen()">
+            <img src="../../assets/burger.png" />
+        </div>
+        <div class="input_search" tabindex="0" (focusout)="showSearchResult(false,searchBoxx.value)">
+            <input type="text" #searchBoxx class="search_input_box" placeholder="Search Anything"
+                (keyup)="showSearchResult(true,searchBoxx.value) " />
+            <img src="../../assets/search.png" class="search_icon" />
+            <div class="search_results" *ngIf="showSearchResultFlag">
+                <div class="heading">
+                    <h2>Search Results:</h2>
+                    <div class="results">
+                        <p class="results_found"> {{searchResults?.length}} results found!</p>
+
+                        <div *ngIf="!searchResults?.length" class="no_results_found">
+                            <p>No Results Found</p>
+                        </div>
+                        <div *ngIf="searchResults?.length>0">
+                            <div *ngFor="let elem of searchResults" class="each_result"
+                                routerLink="/skills/{{elem?.slug}}">
+                                <span class="heading_r">{{elem?.heading}}</span>
+                                <div class="tags_wrapper">
+                                    <span class="tag_r" *ngFor="let item of elem?.tags">{{item}}</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile_main">
+            <h1 class="own_name" id="my_name_header_scroll">Prasann D Patil</h1>
+        </div>
+        <div class="about_number">
+            <img src="../../assets/phone.png" class="icon_ph" />
+            <p class="skills">9022368410</p>
+        </div>
+
+    </div>
+    <div class="menus_list" id="menu_list_id">
+        <p class="each_menu" [ngClass]="{ 'selected_menu': selectedMenu === menu.value}" 
+        (click)="selectMenu(menu)"
+        routerLink="/{{menu?.url}}"
+            *ngFor="let menu of menus">{{menu?.name}}</p>
+    </div>
+    <div>
+
+    </div>
+
+    <app-sidebar-modal></app-sidebar-modal>
+</div>

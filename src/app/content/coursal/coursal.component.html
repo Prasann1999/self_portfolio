@@ -1,0 +1,37 @@
+<div class="coursal-main">
+    <ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+    (slide)="onSlide($event)">
+    <ng-template ngbSlide>
+        <div class="carousel-caption">
+            <h3>slide</h3>
+        </div>
+        <a href="#" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="picsum-img-wrapper">
+                <app-profile [resume]="resume" [selectedValue]="'profile_id'" [from]="'home'"></app-profile>
+            </div>
+        </a>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="carousel-caption">
+            <h3>slide</h3>
+        </div>
+        <a href="#" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="picsum-img-wrapper">
+                <app-about [resume]="resume" [selectedValue]="'about_id'" [from]="'home'"></app-about>
+            </div>
+        </a>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="carousel-caption">
+            <h3>slide</h3>
+        </div>
+        <a href="#" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="picsum-img-wrapper">
+                <app-education [resume]="resume" [selectedValue]="'education_id'" [from]="'home'"></app-education>
+            </div>
+        </a>
+    </ng-template>
+</ngb-carousel>
+<app-skills [resume]="resume" [selectedValue]="selectedValue" ></app-skills>
+
+</div>

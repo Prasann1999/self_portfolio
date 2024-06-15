@@ -1,0 +1,16 @@
+<div class="exp_outer_wrapper" [ngClass]="{ 'selected_resume': selectedValue === 'experience_id' }">
+    <span class="dummy_span_for_scroll_cv" id="experience_id">exp</span>
+    <div class="experiance_wrapper" *ngFor="let exp of resume?.experience">
+        <h3 class="company_name">{{exp?.company}}</h3>
+        <div class="details">
+            <p class="duration"><span>{{exp?.duration}}</span><span
+                    class="location">{{exp?.location}}</span></p>
+            <p class="position">{{exp?.position}}</p>
+        </div>
+        <div class="list_main">
+            <ul class="ul_main">
+                <li *ngFor="let skill of exp?.responsibilities">{{skill}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

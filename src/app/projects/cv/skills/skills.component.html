@@ -1,0 +1,20 @@
+<div class="skills_outer_wrapper" [ngClass]="{ 'selected_resume': selectedValue === 'skills_id' }">
+    <span class="dummy_span_for_scroll_cv" id="skills_id">skill</span>
+    <div class="experiance_wrapper">
+        <h3 class="company_name">Coding Skills</h3>
+        <div class="each_skill list_main">
+            <span *ngFor="let skill of resume?.skills?.coding_skills" class="each_skill_tag">
+                {{skill}}
+            </span>
+        </div>
+
+    </div>
+    <div class="experiance_wrapper">
+        <h3 class="company_name">Graphics Design Skills</h3>
+        <div class="skill_wrapper" class="each_skill">
+            <span *ngFor="let skill of resume?.skills?.graphics_designing" class="each_skill_tag">
+                {{skill}}
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="my_profile" [ngClass]="{ 'selected_resume': selectedValue === 'profile_id',
+    'selected_resume_home': from === 'home'
+ }" id="profile_id">
+    <span class="dummy_span_for_scroll_cv" id="profile_id">dummy</span>
+    <img src="../../../assets/self1.jpeg" class="self_image" />
+    <div class="data">
+        <p class="name">{{resume?.personal_details?.name}}</p>
+        <p class="role">{{resume?.personal_details?.title}}</p>
+        <div class="links_contact">
+            <span class="each_contact">
+                <img src="{{resume?.personal_details?.contact?.linkedin_icon}}" class="icon_contact" />
+                <a class="link_text" target="_blank"
+                    href="{{resume?.personal_details?.contact?.linkedin}}">{{resume?.personal_details?.contact?.linkedinUserName}}</a>
+            </span>
+            <span class="each_contact">
+                <img src="{{resume?.personal_details?.contact?.email_icon}}" class="icon_contact" />
+                <span class="link_text">{{resume?.personal_details?.contact?.email}}</span>
+            </span>
+            <span class="each_contact">
+                <img src="{{resume?.personal_details?.contact?.phone_icon}}" class="icon_contact" />
+                <span class="link_text">{{resume?.personal_details?.contact?.phone}}</span>
+            </span>
+            <span class="each_contact">
+                <img src="{{resume?.personal_details?.contact?.github_icon}}" class="icon_contact" />
+                <a class="link_text" target="_blank"
+                    href="{{resume?.personal_details?.contact?.github}}">{{resume?.personal_details?.contact?.githubUserName}}</a>
+            </span>
+        </div>
+    </div>
+</div>

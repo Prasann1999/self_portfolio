@@ -1,0 +1,22 @@
+.coursal-main {
+    max-width: 900px;
+}
+
+.picsum-img-wrapper {
+    width: 100%;
+    height: 380px;
+}
+
+.carousel-indicators {
+    li {
+        background-color: black !important; 
+    }
+
+    .active {
+        background-color: black !important;
+    }
+}
+.carousel-caption{
+    display: none;
+    color: black !important;
+}

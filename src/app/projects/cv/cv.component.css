@@ -1,0 +1,555 @@
+.my_resume_wrapper {
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 15px 15px 15px;
+
+    .resume_main {
+        /* border: 1px solid lightgray; */
+
+    }
+}
+.dummy_span_for_scroll_cv{
+    color: white;
+    position: absolute;
+    /* background-color: black; */
+    top: -100px;
+    left: 50%;
+    /* width: 50px; */
+    z-index: 55;
+    /* display: none; */
+    opacity: 0;
+}
+
+.heading_main {
+    width: 100vw;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 49.5%;
+    /* Position it halfway across the viewport */
+    transform: translateX(-50%);
+    /* Offset by half its width to center */
+    bottom: 5px;
+    z-index: 99999;
+
+    .heading_wrapper {
+        background-color: #3f51b5;
+        padding: 0;
+        width: 80%;
+        max-width: 900px;
+
+        /* top:50px; */
+        /* left: 1%; */
+        .buttons_select_wrapper {
+            width: 100%;
+
+            .mat-button-toggle {
+                width: 100%;
+                border: 1px solid lightgray;
+
+                span {
+                    text-transform: uppercase;
+                    color: white;
+                }
+            }
+        }
+
+        h2 {
+            margin: 0;
+        }
+    }
+}
+@media only screen and (max-width: 767px) {
+    .heading_main {
+        bottom: 0px;
+        left: 50%;
+        .heading_wrapper {
+            width: 100%;
+        }
+        .mat-button-toggle-label-content{
+            padding: 0px 1px !important;
+            font-size: 9px !important;
+        }
+        .mat-button-toggle {
+            width: 100%;
+            border: 1px solid lightgray;
+
+            span {
+                text-transform: uppercase !important;
+                color: white;
+            }
+        }
+    }
+  
+}
+
+.mat-button-toggle-checked {
+    span {
+        color: black !important;
+        font-weight: 500;
+    }
+}
+
+.my_profile {
+    position: relative;
+    padding: 25px;
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+    .self_image {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        /* border: 1px solid rgb(228, 228, 228); */
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    }
+
+    .links_contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 0px 8px;
+
+        .each_contact {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+
+            .icon_contact {
+                width: 22px;
+                height: 22px;
+            }
+
+            .link_text {
+                font-size: 12px;
+                color: gray;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .data_coep {
+        display: flex;
+        flex-direction: column;
+
+        .title {}
+    }
+
+    .data {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .name {
+            font-size: 50px;
+        }
+
+        .role {
+            font-size: 25px;
+            line-height: 38px;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            padding: 15px 0px;
+            color: #3f51b5;
+        }
+
+        padding-top: 25px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .my_profile{
+        padding: 8px !important;
+        margin: 8px 0px 0px 8px;
+        gap: 10px !important;
+    }
+    .self_image {
+        width: 150px !important;
+        height: 150px !important; 
+    }
+    .links_contact {
+        margin-left: -140px;
+    }
+    .data {
+        display: flex;
+        flex-direction: column;
+        gap: 15px !important;
+        padding-top: 10px !important;
+        font-size: 18px;
+        font-weight: 500;
+        gap: 10px !important;
+        .name {
+            font-size: 25px !important;
+            line-height: 25px !important;
+        }
+
+        .role {
+            font-size: 15px !important;
+            line-height: 20px !important;
+            padding: 12px 0px;
+        }
+    }
+}
+
+.my_college,
+.about_me {
+    position: relative;
+    padding: 20px 25px;
+    margin: 25px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    display: flex;
+    flex-direction: column;
+
+    .summary_self_pts {
+        font-size: 18px;
+        margin: 15px 10px;
+    }   
+    .row1_home{
+        padding-bottom: 10px !important;
+        border-bottom: none !important;
+    }
+    .row1 {
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .row2 {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+    }
+
+    .data_coep {
+        .title_about_me {
+            margin-bottom: 0px;
+            background-color: #3f51b5;
+            color: white;
+            margin-right: -25px;
+            border-radius: 0px 0px 0px 20px;
+            margin-top: -40px;
+            padding: 5px 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .title {
+            margin-bottom: 0px;
+            background-color: #3f51b5;
+            color: white;
+            margin-left: -25px;
+            border-radius: 0px 0px 20px 0px;
+            margin-top: -20px;
+            padding: 5px 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .self_image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        .coep_image {
+            width: 250px;
+            height: 200px;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+    }
+
+    .content_coep {
+        .college_name {
+            line-height: 30px;
+            font-size: 25px;
+            font-weight: 500;
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 15px;
+            padding-bottom: 8px !important;
+        }
+
+        .academics {
+            font-size: 15px;
+            color: rgb(83, 83, 83);
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .content_data {
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            font-size: 18px;
+            color: rgb(83, 83, 83);
+            font-weight: 450;
+            list-style: 40px;
+            padding: 15px 15px;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .about_me,.my_college {
+        font-size: 14px;
+        margin: 8px 0px 8px 0px;
+        padding: 10px 5px;
+        .title_about_me{
+            margin-right: -6px !important;
+            margin-top: -15px !important;
+            margin-bottom: 10px !important;
+
+        }
+        .title{
+            margin-top: -10px !important;
+            margin-left: -5px !important;
+        }
+        .row2 {
+            padding-top: 5px;
+            gap: 10px !important;
+            .content_data {
+                padding: 15px 15px;
+                margin-right: -150px;
+            }
+        }
+        .coep_image{
+            width: 150px !important;
+            height: 130px !important;
+        }
+        .row1 {
+            gap: 15px !important;
+            padding-bottom: 20px;
+            .content_data {
+                font-size: 15px !important;
+                margin-top: 8px !important;
+                p{
+                    margin-bottom: 0px;
+                }
+                padding: 15px 15px;
+                margin-left: -150px;
+            }
+        }
+        .college_name{
+            font-size: 20px !important;
+            line-height: 25px !important;
+        }
+        .content_coep {
+    
+            .academics {
+                gap: 5px;
+                padding-left: 10px;
+            }
+            .summary_self_pts{
+                font-size: 14px;
+                margin: 5px;
+            }
+            .second_list_elem{
+                margin-right: -25px !important;
+            }
+        }
+    }
+
+    .exp_outer_wrapper,.skills_outer_wrapper{
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+    
+}
+
+.outer_content_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px 10px;
+    margin: auto;
+    max-width: 830px;
+}
+.exp_outer_wrapper{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.skills_outer_wrapper{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 10px;
+}
+
+.experiance_wrapper {
+    position: relative;
+    padding: 15px 18px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #d8d8d8;
+        border-radius: 8px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #a7a7a7;
+    }
+
+    .company_name {
+        background-color: #3f51b5;
+        border-radius: 0px 0px 10px 10px;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+        margin-bottom: 5px;
+        padding: 10px 10px;
+        border-bottom: 1px solid lightgray;
+        font-size: 20px;
+        margin: -16px -18px 5px -18px;
+    }
+
+    .each_skill {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        flex-wrap: wrap;
+
+        .each_skill_tag {
+            background-color: gray;
+            color: white;
+            /* border: 1px solid #3f51b5; */
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+
+    }
+
+    .list_main {
+        max-height: 250px;
+        overflow: scroll;
+        overflow-x: hidden;
+
+        .ul_main {
+            padding-left: 20px;
+            margin-bottom: 0px;
+            color: rgb(91, 91, 91);
+        }
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: rgb(91, 91, 91);
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 10px;
+
+        p {
+            margin-bottom: 0px;
+        }
+
+        .position {
+            color: #3f51b5;
+        }
+
+        .duration {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            .location {
+                margin-left: auto;
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+.selected_resume {
+    border: 2px solid rgb(43, 43, 255);
+    border-radius: 0px 0px 8px 8px;
+}
+
+.resume_download_action {
+    position: fixed;
+    cursor: pointer;
+    right: 0px;
+    top: 150px;
+    z-index: 999;
+
+    .cv_download {
+        background: rgb(253, 160, 0);
+        border: 3px solid rgb(255, 228, 177);
+        border-right: none;
+        color: white;
+        padding: 8px 8px;
+        border-radius: 8px 0px 0px 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            display: flex;
+            flex-direction: column;
+            font-weight: 500;
+            justify-content: center;
+            margin-bottom: -2px;
+        }
+    }
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
+@media only screen and (max-width: 767px) {
+
+    .resume_download_action {
+        font-size: 10px;
+        .cv_download {
+            padding: 4px 4px;
+            border-radius: 8px 0px 0px 8px;
+    
+            p {
+                display: flex;
+                flex-direction: column;
+                font-weight: 500;
+                justify-content: center;
+                margin-bottom: -2px;
+                line-height: 12px;
+            }
+        }
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .selected_resume_home{
+        min-height: 370px;
+    }
+    .resume_download_action {
+        right: 0px;
+    }
+}
