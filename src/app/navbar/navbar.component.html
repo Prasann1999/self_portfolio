@@ -1,12 +1,12 @@
 <div class="navbar_wrapper">
     <div class="logo_name">
         <div class="menu" (click)="sideModalOpen()">
-            <img src="../../assets/burger.png" />
+            <img src="assets/burger.png" />
         </div>
         <div class="input_search" tabindex="0" (focusout)="showSearchResult(false,searchBoxx.value)">
             <input type="text" #searchBoxx class="search_input_box" placeholder="Search Anything"
                 (keyup)="showSearchResult(true,searchBoxx.value) " />
-            <img src="../../assets/search.png" class="search_icon" />
+            <img src="assets/search.png" class="search_icon" />
             <div class="search_results" *ngIf="showSearchResultFlag">
                 <div class="heading">
                     <h2>Search Results:</h2>
@@ -34,7 +34,7 @@
             <h1 class="own_name" id="my_name_header_scroll">Prasann D Patil</h1>
         </div>
         <div class="about_number">
-            <img src="../../assets/phone.png" class="icon_ph" />
+            <img src="assets/phone.png" class="icon_ph" />
             <p class="skills">9022368410</p>
         </div>
 

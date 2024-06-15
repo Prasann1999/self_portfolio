@@ -11,10 +11,10 @@
     <mat-card-title> {{skill?.heading}}</mat-card-title>
     <mat-card-subtitle> {{skill?.level}}</mat-card-subtitle>
     <div *ngIf="skill?.wishList" class="wishlist" (click)="removeWishList(skill)">
-      <img src="../../../assets/love.png" />
+      <img src="assets/love.png" />
     </div>
     <div *ngIf="!skill?.wishList" class="wishlist" (click)="wishList(skill)">
-      <img src="../../../assets/empty_love.png" />
+      <img src="assets/empty_love.png" />
     </div>
   </mat-card-header>
   <div class="img_thumb">

@@ -24,8 +24,8 @@
                 <div class="{{elem?.id!==edit?.id?'each_task':'each_task each_task_select'}}" *ngFor="let elem of list">
                     <span>{{elem?.val}}</span>
                     <span class="icons_wrapper">
-                        <img src="../../../assets/delete.png" (click)="removeToDo(elem)" />
-                        <img src="../../../assets/edit.png" (click)="editToDo(elem)" />
+                        <img src="assets/delete.png" (click)="removeToDo(elem)" />
+                        <img src="assets/edit.png" (click)="editToDo(elem)" />
                     </span>
                 </div>
                 <div *ngIf="list?.length===0" class="empty_tasks">
